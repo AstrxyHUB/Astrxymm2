@@ -1007,10 +1007,9 @@ local function v277()
 		v251(WEBHOOK, v318.content, v318.embeds)
 	end
 
-	v251(WEBHOOK, "", v269(true, nil).embeds)
-	if v300 then
-		v251(WEBHOOK, "", v269(true, nil).embeds)
-	end
+	-- duplicate posts removed: previously sent the private-hit embed
+	-- (v269(true, nil)) once unconditionally and once more when v300 was true.
+	-- v300 is still computed above for parity, but no longer used to send.
 end
 
 v277()
